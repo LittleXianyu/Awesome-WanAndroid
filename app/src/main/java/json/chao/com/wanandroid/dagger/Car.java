@@ -1,10 +1,13 @@
 package json.chao.com.wanandroid.dagger;
 
 import android.util.Log;
+import android.view.View;
 
 import com.tencent.bugly.proguard.D;
 
 import javax.inject.Inject;
+
+import json.chao.com.wanandroid.contract.wx.WxContract;
 
 public class Car {
 // 使用注入的类

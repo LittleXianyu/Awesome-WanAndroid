@@ -7,7 +7,7 @@ import javax.inject.Inject;
 public class Engine {
 
     private String gear;
-//    @Inject
+    @Inject
     public Engine(String gear){
         this.gear = gear;
     }

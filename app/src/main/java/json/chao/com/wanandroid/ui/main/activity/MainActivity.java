@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.net.TrafficStats;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Trace;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -203,6 +205,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mFragments = new ArrayList<>();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            Trace.beginSection("onCreate");
+        }
+
         if (savedInstanceState == null) {
             mPresenter.setNightModeState(false);
             initPager(false, Constants.TYPE_MAIN_PAGER);
@@ -210,6 +216,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
             mBottomNavigationView.setSelectedItemId(R.id.tab_main_pager);
             initPager(true, Constants.TYPE_SETTING);
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            Trace.endSection();
+        }
+
     }
 
     @Override

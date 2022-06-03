@@ -43,7 +43,9 @@ import json.chao.com.wanandroid.BuildConfig;
 import json.chao.com.wanandroid.R;
 import json.chao.com.wanandroid.core.dao.DaoMaster;
 import json.chao.com.wanandroid.core.dao.DaoSession;
+import json.chao.com.wanandroid.dagger.Car;
 import json.chao.com.wanandroid.di.component.AppComponent;
+//import json.chao.com.wanandroid.di.component.DaggerAppComponent;
 import json.chao.com.wanandroid.di.component.DaggerAppComponent;
 import json.chao.com.wanandroid.di.module.AppModule;
 import json.chao.com.wanandroid.di.module.HttpModule;
@@ -120,7 +122,14 @@ public class WanAndroidApp extends Application implements HasActivityInjector {
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
-
+        // 测试 dragger
+        Car car = new Car();
+        car.getEngineA().printGearName();
+        car.getEngineB().printGearName();
+        car.getDoorA().openDoor();
+        car.callGlass();
+        car.getEngineB().printGearName();
+        // --------------
         refWatcher = LeakCanary.install(this);
 
         initGreenDao();

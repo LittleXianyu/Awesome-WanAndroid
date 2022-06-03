@@ -22,6 +22,7 @@ import json.chao.com.wanandroid.utils.CommonUtils;
 public abstract class BaseFragment<T extends AbstractPresenter> extends AbstractSimpleFragment
         implements AbstractView {
 
+    // 给Fragment注入 presenter, 每个Presenter实体类的构造函数会有@Inject注解
     @Inject
     protected T mPresenter;
 

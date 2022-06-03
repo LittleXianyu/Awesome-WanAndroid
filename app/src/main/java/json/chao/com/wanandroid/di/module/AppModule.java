@@ -52,6 +52,7 @@ public class AppModule {
         return implPreferencesHelper;
     }
 
+    // 假设：三个参数都是通过上面的@Provicer注入的
     @Provides
     @Singleton
     DataManager provideDataManager(HttpHelper httpHelper, DbHelper dbhelper, PreferenceHelper preferencesHelper) {

@@ -202,12 +202,12 @@ public class MainPagerPresenter extends BasePresenter<MainPagerContract.View> im
                 }));
     }
 
-    private void loginSuccess(BaseResponse<LoginData> loginResponse) {
-        LoginData loginData = loginResponse.getData();
-        mDataManager.setLoginAccount(loginData.getUsername());
-        mDataManager.setLoginPassword(loginData.getPassword());
-        mDataManager.setLoginStatus(true);
-        mView.showAutoLoginSuccess();
+    private void  loginSuccess(BaseResponse<LoginData> loginResponse) {
+            LoginData loginData = loginResponse.getData();
+            mDataManager.setLoginAccount(loginData.getUsername());
+            mDataManager.setLoginPassword(loginData.getPassword());
+            mDataManager.setLoginStatus(true);
+            mView.showAutoLoginSuccess();
     }
 
     @NonNull
